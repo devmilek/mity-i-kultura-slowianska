@@ -8,7 +8,7 @@
       </div>
       <div class="nav-items" :class="{active: isActive}">
         <ul>
-          <li @click="navbarToggle" v-for="mit in mits" :key="mit.name">
+          <li @click="navbarToggle" v-for="mit in mits" :key="mit.name" class="nav-item">
             <router-link :to="{ name: 'Mit', params: { slug: mit.slug }}">{{mit.name}}</router-link>
           </li>
         </ul>
@@ -114,6 +114,9 @@ body {
     justify-content: center;
     z-index: 9999;
     padding: 46px;
+    .nav-item:nth-last-child(1) {
+      margin-bottom: 0;
+    }
   }
   ul {
     list-style-type: none;

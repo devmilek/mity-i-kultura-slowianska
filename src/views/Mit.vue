@@ -97,7 +97,7 @@ export default {
   overflow-x: hidden;
   &.portrait {
     .wrapper {
-      min-height: 10vh;
+      min-height: 100vh;
     }
     .img-wrapper {
       width: unset;
@@ -160,6 +160,11 @@ export default {
     display: block;
   }
   .main {
+    &.portrait {
+      .wrapper {
+        min-height: 10vh;
+      }
+    }
     .img-wrapper {
       display: none;
     }
