@@ -12375,6 +12375,11 @@
   "resolved" "https://registry.npmjs.org/uuid/-/uuid-8.3.2.tgz"
   "version" "8.3.2"
 
+"v-lazy-image@^2.0.1":
+  "integrity" "sha512-2e29ouwRb2RwllL2sl1ZHbRiWXjbphzjA42QH8seoYBPINGPm2atRyFHq7SLU243FyMLhJEF2M87Csv/p/+Q7Q=="
+  "resolved" "https://registry.npmjs.org/v-lazy-image/-/v-lazy-image-2.0.1.tgz"
+  "version" "2.0.1"
+
 "v8-compile-cache@^2.0.3":
   "integrity" "sha512-l8lCEmLcLYZh4nbunNZvQCJc5pv7+RCwa8q/LdUx8u7lsWvPDKmpodJAJNwkAhJC//dFY48KuIEmjtd4RViDrA=="
   "resolved" "https://registry.npmjs.org/v8-compile-cache/-/v8-compile-cache-2.3.0.tgz"
@@ -12532,6 +12537,11 @@
   "resolved" "https://registry.npmjs.org/vue-hot-reload-api/-/vue-hot-reload-api-2.3.4.tgz"
   "version" "2.3.4"
 
+"vue-lazy-image-loading@^1.2.1":
+  "integrity" "sha512-xQQOdH1oHh00guPrDku56ZHL9HgmMmEDkR9dsKY6kdi+XQNSagUNzum1UkbnisAdftWcwf1iqemxne43ZKDmwQ=="
+  "resolved" "https://registry.npmjs.org/vue-lazy-image-loading/-/vue-lazy-image-loading-1.2.1.tgz"
+  "version" "1.2.1"
+
 "vue-loader-v16@npm:vue-loader@^16.1.0":
   "integrity" "sha512-7vKN45IxsKxe5GcVCbc2qFU5aWzyiLrYJyUuMz4BQLKctCj/fmCa0w6fGiiQ2cLFetNcek1ppGJQDCup0c1hpA=="
   "resolved" "https://registry.npmjs.org/vue-loader/-/vue-loader-16.8.3.tgz"
@@ -12551,6 +12561,11 @@
     "loader-utils" "^1.1.0"
     "vue-hot-reload-api" "^2.3.0"
     "vue-style-loader" "^4.1.0"
+
+"vue-progressive-image@^3.2.0":
+  "integrity" "sha512-D1DSBOIw2nAJHTDT2aVn2lDROKGd4XvCIIH5JY2t5yjNcDppRXzqXRqrGYRFcRbtA+6XV17s55VszFFItiNLcg=="
+  "resolved" "https://registry.npmjs.org/vue-progressive-image/-/vue-progressive-image-3.2.0.tgz"
+  "version" "3.2.0"
 
 "vue-router@^3.2.0":
   "integrity" "sha512-FUlILrW3DGitS2h+Xaw8aRNvGTwtuaxrRkNSHWTizOfLUie7wuYwezeZ50iflRn8YPV5kxmU2LQuu3nM/b3Zsg=="

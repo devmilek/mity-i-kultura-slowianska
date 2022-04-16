@@ -10,9 +10,12 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "v-lazy-image": "^2.0.1",
     "vue": "^2.6.11",
     "vue-apollo": "^3.0.0-beta.11",
     "vue-carousel": "^0.18.0",
+    "vue-lazy-image-loading": "^1.2.1",
+    "vue-progressive-image": "^3.2.0",
     "vue-router": "^3.2.0"
   },
   "devDependencies": {

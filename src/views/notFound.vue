@@ -13,28 +13,29 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  .not-found {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    min-height: 100vh;
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 140px;
-    }
-    p {
-      max-width: 340px;
-      text-align: center;
-      color: rgba(24, 24, 24, 0.6);
-      margin-top: 20px;
-    }
-    a {
-      background: #872606;
-      padding: 15px 40px;
-      color: white;
-      text-decoration: none;
-      margin-top: 40px;
-    }
+@import "@/scss/_variables.scss";
+.not-found {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+  h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 140px;
   }
+  p {
+    max-width: 340px;
+    text-align: center;
+    color: rgba(24, 24, 24, 0.6);
+    margin-top: 20px;
+  }
+  a {
+    background: $main-color;
+    padding: 15px 40px;
+    color: white;
+    text-decoration: none;
+    margin-top: 40px;
+  }
+}
 </style>

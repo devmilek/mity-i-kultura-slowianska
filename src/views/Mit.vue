@@ -4,35 +4,34 @@
   </div>
   <div class="mit-detail" v-else>
     <div class="img-wrapper column">
-      <img :src="mitData.image.url" alt="">
+      <lazy-img :src="mitData.image.url" alt="" />
     </div>
-    <section class="main" :class="{portrait: mitData.portrait}">
+    <section class="main" :class="{ portrait: mitData.portrait }">
       <div class="wrapper">
         <div class="img-wrapper">
-          <img :src="mitData.image.url" alt="">
+          <lazy-img :src="mitData.image.url" />
         </div>
         <div class="content">
-          <h1>{{mitData.name}}</h1>
+          <h1>{{ mitData.name }}</h1>
           <div class="divider"></div>
-          <p>{{mitData.description}}</p>
+          <p>{{ mitData.description }}</p>
+          <p class="sources">
+            Źródła: “Bestiariusz słowiański” Paweł Zych Witold Vargas
+          </p>
         </div>
       </div>
     </section>
-    <Footer />
   </div>
 </template>
 
 <script>
-
 import gql from 'graphql-tag'
-import Footer from '@/components/Footer'
 import LoadingSpinner from '@/components/LoadingSpinner'
 
 export default {
   name: 'Mit',
   components: {
-    LoadingSpinner,
-    Footer
+    LoadingSpinner
   },
 
   data () {
@@ -47,22 +46,24 @@ export default {
   },
   apollo: {
     mitData: {
-      query: gql`query searchMit($slug: String!) {
-        mit(where: {slug: $slug}) {
-          name
-          image {
-            url(transformation: {image: {resize: {width: 1000}}})
+      query: gql`
+        query searchMit($slug: String!) {
+          mit(where: { slug: $slug }) {
+            name
+            image {
+              url(transformation: { image: { resize: { width: 1000 } } })
+            }
+            description
+            portrait
           }
-          description
-          portrait
         }
-      }`,
+      `,
       variables () {
         return {
           slug: this.$route.params.slug
         }
       },
-      update: data => data.mit
+      update: (data) => data.mit
     }
   },
   mounted () {
@@ -74,6 +75,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../scss/_variables.scss";
 
 .loading {
   width: 100%;
@@ -100,7 +102,7 @@ export default {
       min-height: 100vh;
     }
     .img-wrapper {
-      width: unset;
+      width: 100%;
       max-width: 450px;
     }
     .content {
@@ -124,15 +126,20 @@ export default {
   }
   .content {
     width: 50%;
+    .sources {
+      font-size: 10px;
+      margin-top: 4px;
+      color: rgba(0, 0, 0, 0.3);
+    }
     h1 {
-      font-family: 'Playfair Display', serif;
+      font-family: "Playfair Display", serif;
       font-size: 68px;
       letter-spacing: 1px;
     }
     .divider {
       height: 8px;
       width: 128px;
-      background: #872606;
+      background: $main-color;
       margin: 22px 0;
     }
     p {
@@ -189,90 +196,4 @@ export default {
     padding: 0 20px;
   }
 }
-
-//.img-wrapper.column {
-//  display: none;
-//}
-//.img-wrapper {
-//  padding-top: 63px;
-//  img {
-//    width: 100%;
-//  }
-//}
-//.content {
-//  width: 50%;
-//  h1 {
-//    font-family: 'Playfair Display', serif;
-//    font-size: 68px;
-//    letter-spacing: 1px;
-//  }
-//  .divider {
-//    height: 8px;
-//    width: 128px;
-//    background: #872606;
-//    margin: 22px 0;
-//  }
-//  p {
-//    line-height: 180%;
-//    color: rgba(24, 24, 24, 0.6);
-//  }
-//}
-//@media screen and (max-width: 1000px) {
-//  .content {
-//    h1 {
-//      font-size: 54px;
-//    }
-//
-//    .divider {
-//      height: 6px;
-//    }
-//
-//    p {
-//      font-size: 14px;
-//    }
-//  }
-//}
-//  @media screen and (max-width: 1000px) {
-//    section {
-//      .wrapper {
-//        margin-top: 63px;
-//        flex-direction: column;
-//      }
-//    }
-//    .content {
-//      margin-top: 16px;
-//      width: 100%;
-//
-//      .divider {
-//        margin: 20px 0;
-//      }
-//    }
-//  }
-//
-//  @media screen and (max-width: 625px) {
-//    section {
-//      padding: 0 26px;
-//    }
-//    .content {
-//      h1 {
-//        font-size: 46px;
-//      }
-//    }
-//  }
-//  @media screen and (max-width: 500px) {
-//    section {
-//      padding: 0 16px;
-//    }
-//    .content {
-//      h1 {
-//        font-size: 40px;
-//      }
-//
-//      p {
-//        line-height: 170%;
-//      }
-//    }
-//  }
-//}
-
 </style>
